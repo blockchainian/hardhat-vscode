@@ -1,8 +1,8 @@
 {
-  "name": "@nomicfoundation/coc-solidity",
+  "name": "@blockchainian/coc-solidity",
   "description": "Solidity and Hardhat support for coc.nvim",
   "license": "MIT",
-  "version": "0.7.2",
+  "version": "0.7.4",
   "author": "Nomic Foundation",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "prebundle": "npm run clean",
-    "bundle": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --external:@nomicfoundation/solidity-language-server --outdir=out",
+    "bundle": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --external:@blockchainian/solidity-language-server --outdir=out",
     "prepack": "npm run bundle",
     "lint": "npm run prettier -- --check && npm run eslint",
     "lint:fix": "npm run prettier --write && npm run eslint --fix",
@@ -29,7 +29,7 @@
     "clean": "rimraf out .nyc_output coverage *.tsbuildinfo *.log"
   },
   "dependencies": {
-    "@nomicfoundation/solidity-language-server": "0.7.2"
+    "@blockchainian/solidity-language-server": "0.7.3"
   },
   "devDependencies": {
     "coc.nvim": "^0.0.80",
@@ -59,9 +59,9 @@
     ],
     "configuration": {
       "type": "object",
-      "title": "@nomicfoundation/coc-solidity configuration",
+      "title": "@blockchainian/coc-solidity configuration",
       "properties": {
-        "@nomicfoundation/coc-solidity.telemetry": {
+        "@blockchainian/coc-solidity.telemetry": {
           "type": "boolean",
           "default": false,
           "description": "Allow this extension to send telemetry. This helps us understand how it is used and how it is performing. Read more in our [privacy policy](https://hardhat.org/privacy-policy.html)."

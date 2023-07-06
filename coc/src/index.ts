@@ -15,7 +15,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
     "solidity",
     "Solidity Language Server",
     {
-      module: require.resolve("@nomicfoundation/solidity-language-server"),
+      module: require.resolve("@blockchainian/solidity-language-server"),
       transport: coc.TransportKind.ipc,
     },
     {
@@ -34,7 +34,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
         ],
       },
       initializationOptions: {
-        extensionName: "@nomicfoundation/coc-solidity",
+        extensionName: "@blockchainian/coc-solidity",
         extensionVersion: packageJson.version,
         env: "production",
         telemetryEnabled,
@@ -69,5 +69,5 @@ async function showTelemetryPrompt(context: ExtensionContext) {
 }
 
 function getExtensionConfig() {
-  return coc.workspace.getConfiguration("@nomicfoundation/coc-solidity");
+  return coc.workspace.getConfiguration("@blockchainian/coc-solidity");
 }
