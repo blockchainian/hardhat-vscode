@@ -2,7 +2,7 @@
   "name": "@blockchainian/coc-solidity",
   "description": "Solidity and Hardhat support for coc.nvim",
   "license": "MIT",
-  "version": "0.7.4",
+  "version": "0.7.6",
   "author": "Nomic Foundation",
   "repository": {
     "type": "git",
