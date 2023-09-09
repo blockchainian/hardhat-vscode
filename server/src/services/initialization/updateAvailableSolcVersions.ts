@@ -1,5 +1,4 @@
 import _ from "lodash";
-import got from "got";
 import { ServerState } from "../../types";
 import { isTestMode } from "../../utils";
 
@@ -87,33 +86,15 @@ export const availableVersions = [
   "0.8.14",
   "0.8.15",
   "0.8.16",
+  "0.8.17",
+  "0.8.18",
+  "0.8.19",
+  // slang supports up to 0.8.19
 ];
 
 export async function updateAvailableSolcVersions(state: ServerState) {
   if (isTestMode()) {
     return;
   }
-  state.logger.info("Fetching latest solidity versions");
-
-  const latestVersions = await fetchLatestVersions(state);
-
-  state.solcVersions = _.union(availableVersions, latestVersions);
-}
-
-interface VersionsResponse {
-  builds: Array<{ version: string }>;
-}
-async function fetchLatestVersions(state: ServerState) {
-  try {
-    const data: VersionsResponse = await got
-      .get("https://binaries.soliditylang.org/wasm/list.json", {
-        timeout: 2000,
-      })
-      .json();
-
-    return _.map(data.builds, "version");
-  } catch (error) {
-    state.telemetry.captureException(error);
-    return [];
-  }
+  state.solcVersions = availableVersions;
 }

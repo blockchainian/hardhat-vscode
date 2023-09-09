@@ -6,6 +6,7 @@ import { analyze } from "@nomicfoundation/solidity-analyzer";
 import semver from "semver";
 import { Language, ProductionKind } from "@nomicfoundation/slang";
 import _ from "lodash";
+import { version } from "os";
 import { ServerState } from "../../types";
 import { walk } from "../../parser/slangHelpers";
 import { onCommand } from "../../utils/onCommand";
